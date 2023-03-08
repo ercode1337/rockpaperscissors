@@ -33,23 +33,23 @@ function playRound(playerSelection
     }
 }
 
-const playerChoose = prompt("Which one do you choose; Rock, Paper or Scissors?:");
-const playerSelection = playerChoose
-const computerSelection = getComputerChoice();
-
 function game() {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
+        const playerChoose = prompt("Rock, Paper or Scissors?:");
+        const playerSelection = playerChoose
+        const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
+        const points = `You: ${playerScore}, Computer: ${computerScore}`;
+        console.log(roundResult, points);
         if (roundResult.includes("win")) {
             playerScore++;
         } else if (roundResult.includes("lose")) {
             computerScore++;
         }
     }
-    console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
+    console.log(`You: ${playerScore}, Computer: ${computerScore}`);
     if (playerScore > computerScore) {
         console.log("You won the game!");
     } else if (playerScore < computerScore) {
@@ -57,6 +57,7 @@ function game() {
     } else {
         console.log("It's a draw!");
     }
+    return;
 }
 
 game();
