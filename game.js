@@ -1,13 +1,21 @@
+/** The Odin Project exercise :)
+ * Coded by ercode1337
+ * Pseudocode in README.md
+*/
+
+/** Choice variables */
 const a = "rock";
 const b = "paper";
 const c = "scissors";
 
+/** Computer's function for random choice */
 function getComputerChoice() {
     const playerChoice = [a, b, c]
     const output = playerChoice[Math.floor(Math.random()*playerChoice.length)]
     return output;
 }
 
+/** Game logics */
 function playRound(playerSelection
     , computerSelection) {
     const playerChoice = [a, b, c]
@@ -33,22 +41,24 @@ function playRound(playerSelection
     }
 }
 
+/** Paper rock scissors game loop start */
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) { /** Adding points for 5 rounds */
         const playerChoose = prompt("Rock, Paper or Scissors?:");
         const playerSelection = playerChoose
         const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);
         const points = `You: ${playerScore}, Computer: ${computerScore}`;
-        console.log(roundResult, points);
+        console.log(roundResult, points); /** Individual rounds results */
         if (roundResult.includes("win")) {
             playerScore++;
         } else if (roundResult.includes("lose")) {
             computerScore++;
         }
     }
+    /** Game results */
     console.log(`You: ${playerScore}, Computer: ${computerScore}`);
     if (playerScore > computerScore) {
         console.log("You won the game!");
@@ -59,5 +69,5 @@ function game() {
     }
     return;
 }
-
+/** end */
 game();
