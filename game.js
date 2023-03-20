@@ -3,10 +3,19 @@
  * Pseudocode in README.md
 */
 
+
 /** Choice variables */
 const a = "rock";
 const b = "paper";
 const c = "scissors";
+
+let playerChoose;
+let playerScore = 0;
+let computerScore = 0;
+
+const result = document.getElementById('result');
+const points = document.getElementById('points');
+const newgame = document.getElementById('newgame');
 
 /** Computer's function for random choice */
 function getComputerChoice() {
@@ -32,7 +41,7 @@ function playRound(playerSelection
     } else if (playerSelection === c && computerSelection === a) {
         return "Rock beats scissors. You lose!";
     } else if (playerSelection === c && computerSelection === b) {
-        return "Scissors beats paper. You win!";
+        return "Scissors beats paper. You Win!";
     } else {
         return "It's a draw!";
     }
@@ -43,31 +52,100 @@ function playRound(playerSelection
 
 /** Paper rock scissors game loop start */
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) { /** Adding points for 5 rounds */
-        const playerChoose = prompt("Rock, Paper or Scissors?:");
-        const playerSelection = playerChoose
+        playerScore = 0;
+        computerScore = 0;
+
+        const roBtn = document.getElementById('roBtn');
+        roBtn.addEventListener('click', function(){
+        playerChoose = a;
         const computerSelection = getComputerChoice();
-        const roundResult = playRound(playerSelection, computerSelection);
+        const roundResult = playRound(playerChoose, computerSelection);
         const points = `You: ${playerScore}, Computer: ${computerScore}`;
-        console.log(roundResult, points); /** Individual rounds results */
+        result.innerText = roundResult; /** Individual rounds results */
+        if (playerScore === 5 || computerScore === 5) {
+            result.innerText = points; /** Individual rounds results */
+        }
+        if (playerScore === 5 || computerScore === 5) {
+            newgame.innerText = 'Restart Game';
+            newgame.addEventListener('click', function(){
+                document.location.reload(true);
+            });
+            return;
+        }
         if (roundResult.includes("win")) {
             playerScore++;
         } else if (roundResult.includes("lose")) {
             computerScore++;
         }
-    }
+    });
+    roBtn.innerText = 'Rock';
+
+    const paBtn = document.getElementById('paBtn');
+    paBtn.addEventListener('click', function(){
+        playerChoose = b;
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerChoose, computerSelection);
+        const points = `You: ${playerScore}, Computer: ${computerScore}`;
+        result.innerText = roundResult; /** Individual rounds results */
+        if (playerScore === 5 || computerScore === 5) {
+            result.innerText = points; /** Individual rounds results */
+        }
+        if (playerScore === 5 || computerScore === 5) {
+            newgame.innerText = 'Restart Game';
+            newgame.addEventListener('click', function(){
+                document.location.reload(true);
+            });
+            return;
+        }
+        if (roundResult.includes("win")) {
+            playerScore++;
+        } else if (roundResult.includes("lose")) {
+            computerScore++;
+        }
+    });
+    paBtn.innerText = 'Paper';
+
+    const scBtn = document.getElementById('scBtn');
+    scBtn.addEventListener('click', function(){
+        playerChoose = c;
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerChoose, computerSelection);
+        const points = `You: ${playerScore}, Computer: ${computerScore}`;
+        result.innerText = roundResult; /** Individual rounds results */
+        if (playerScore === 5 || computerScore === 5) {
+            result.innerText = points; /** Individual rounds results */
+        }
+        if (playerScore === 5 || computerScore === 5) {
+            newgame.innerText = 'Restart Game';
+            newgame.addEventListener('click', function(){
+                document.location.reload(true);
+            });
+            return;
+        }
+        if (roundResult.includes("win")) {
+            playerScore++;
+        } else if (roundResult.includes("lose")) {
+            computerScore++;
+        }
+    });
+    scBtn.innerText = 'Scissors';
+
+
+    
     /** Game results */
-    console.log(`You: ${playerScore}, Computer: ${computerScore}`);
+    if (playerScore === 5 || computerScore === 5) {
+        const points = `You: ${playerScore}, Computer: ${computerScore}`;
+        result.innerText = points; /** Individual rounds results */
     if (playerScore > computerScore) {
-        console.log("You won the game!");
-    } else if (playerScore < computerScore) {
-        console.log("You lost the game!");
-    } else {
-        console.log("It's a draw!");
+            result.innerText = "You won the game!";
+        } else if (playerScore < computerScore) {
+            result.innerText = "You lost the game!";
+        } else {
+            result.innerText = "It's a draw!";
+        }
+        return;
     }
-    return;
 }
+
 /** end */
 game();

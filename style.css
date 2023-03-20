@@ -1,0 +1,126 @@
+body {
+    background-color: #28282B;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    font-style: italic;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        135deg,
+        #D50000,
+        #D50000 20px,
+        #C51162 20px,
+        #C51162 40px,
+        #AA00FF 40px,
+        #AA00FF 60px,
+        #6200EA 60px,
+        #6200EA 80px,
+        #304FFE 80px,
+        #304FFE 100px,
+        #2962FF 100px,
+        #2962FF 120px,
+        #0091EA 120px,
+        #0091EA 140px,
+        #00B8D4 140px,
+        #00B8D4 160px,
+        #00BFA5 160px,
+        #00BFA5 180px,
+        #00C853 180px,
+        #00C853 200px,
+        #64DD17 200px,
+        #64DD17 220px,
+        #AEEA00 220px,
+        #AEEA00 240px,
+        #FFD600 240px,
+        #FFD600 260px,
+        #FFAB00 260px,
+        #FFAB00 280px,
+        #FF6D00 280px,
+        #FF6D00 300px,
+        #DD2C00 300px,
+        #DD2C00 320px
+      );
+    }
+
+button:hover {
+    box-shadow: 0 0 75px rgba(0, 0, 0, 0.2); 
+}
+
+#container {
+    position: relative;
+    margin-top: 5%;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 75px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background: #6200EA;
+    color: black;
+    font-weight: 700;
+    font-size: 35px;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: black;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    flex-shrink: 0;
+}
+
+#newgame {
+    color: blue;
+    border-bottom: 4px solid blue;
+}
+
+#newgame:hover {
+    cursor: pointer;
+}
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-items: center;
+    margin-top: 20vh;
+    flex-wrap: nowrap;
+}
+
+#results {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 55px;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    margin-bottom: 50%;
+    flex-wrap: nowrap;
+}
+
+#result {
+    display: flex;
+}
+
+#newgame {
+    display: flex;
+}
+
+#hed {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+}
