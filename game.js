@@ -16,6 +16,8 @@ let computerScore = 0;
 const result = document.getElementById('result');
 const points = document.getElementById('points');
 const newgame = document.getElementById('newgame');
+const resultComp = document.getElementById('resultComp');
+const resultPlayer = document.getElementById('resultPlayer');
 
 /** Computer's function for random choice */
 function getComputerChoice() {
@@ -66,7 +68,11 @@ function game() {
             result.innerText = points; /** Individual rounds results */
         }
         if (playerScore === 5 || computerScore === 5) {
+            document.getElementById("game-over").style.display = "block";
+            document.getElementById("content").style.filter = "blur(5px)";
             newgame.innerText = 'Restart Game';
+            resultComp.innerText = `Computer: ${computerScore}`;
+            resultPlayer.innerText = `You: ${playerScore}`;
             newgame.addEventListener('click', function(){
                 document.location.reload(true);
             });
@@ -91,7 +97,11 @@ function game() {
             result.innerText = points; /** Individual rounds results */
         }
         if (playerScore === 5 || computerScore === 5) {
+            document.getElementById("game-over").style.display = "block";
+            document.getElementById("content").style.filter = "blur(5px)";
             newgame.innerText = 'Restart Game';
+            resultComp.innerText = `Computer: ${computerScore}`;
+            resultPlayer.innerText = `You: ${playerScore}`;
             newgame.addEventListener('click', function(){
                 document.location.reload(true);
             });
@@ -116,7 +126,11 @@ function game() {
             result.innerText = points; /** Individual rounds results */
         }
         if (playerScore === 5 || computerScore === 5) {
+            document.getElementById("game-over").style.display = "block";
+            document.getElementById("content").style.filter = "blur(5px)";
             newgame.innerText = 'Restart Game';
+            resultComp.innerText = `Computer: ${computerScore}`;
+            resultPlayer.innerText = `You: ${playerScore}`;
             newgame.addEventListener('click', function(){
                 document.location.reload(true);
             });
