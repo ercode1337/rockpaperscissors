@@ -9,6 +9,7 @@
     <script src="game.js" defer></script>
 </head>
 <body>
+    <div id="content">
     <div id="container"><span class="auto-type"></span></div>
     <div id="hed">Coded by ercode1337</div>
     <div id="buttons">
@@ -18,15 +19,23 @@
     </div>
     <div id="results">
         <div id="result"></div>
+    </div>
+    </div>
+    <div id="game-over" style="display:none;">
         <div id="newgame"></div>
+        <div id="resultEnd">Results:</div>
+        <div id="resultComp"></div>
+        <div id="resultPlayer"></div>
+        <div id="thankYou">Thank you for playing the game!</div>
+        <div id="thankYou">@ercode1337</div>
     </div>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <script>
         const typed = new Typed(".auto-type", {
-            strings: ["Rock", "Paper", "or Scissors?"],
+            strings: ["Rock, Paper or Scissors?"],
             typeSpeed: 150,
             backSpeed: 150,
-            loop: true
+            loop: false
         })
     </script>
 </body>

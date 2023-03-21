@@ -75,7 +75,21 @@ button {
 
 #newgame {
     color: blue;
-    border-bottom: 4px solid blue;
+    border-bottom: 4px solid black;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#thankYou {
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
 }
 
 #newgame:hover {
@@ -112,8 +126,48 @@ button {
     display: flex;
 }
 
-#newgame {
+#resultEnd {
+    color: black;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultComp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+#resultPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #6200EA;
+    width: 700px;
+    height: 300px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    gap: 15px;
 }
 
 #hed {
